@@ -30,3 +30,21 @@ img {
     display: block;
     margin: 0 auto;
 }
+
+figure {
+    margin: 10px 0 10px 0;
+}
+
+figcaption {
+    text-align: center;
+}
+
+#heading {
+    color: blue;
+}
+
+.popular {
+    border-style: dotted ;
+    border-color: red;
+    border-width: 4px;
+}
