@@ -1,27 +1,49 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jetsadakorn's example page</title>
-    <link href="styles/styles.css" rel="stylesheet" type="text/css">
+    <title>Primes Number Finder</title>
 </head>
 <body>
-    <h1>Khon Kaen University</h1>
-    <img src="images/kku.jpg" alt="KKU" height="50%">
-    <figure>
-        <img src="images/en50.jpg" alt="50TH ANNIVERSARY FACULTY OF ENGINEERING BUILDING" height="50%">
-        <figcaption>50th Anniversary Faculty of Engeineering Building</figcaption>
-    </figure>
-    <p id="heading">Khon Kaen University has many outstanding places</p>
-    <ul>
-        <li class="popular">ศาลเจ้าพ่อมอดินแดง</li>
-        <li>พิพิธภัณฑ์ธรรมชาติวิทยา มข</li>
-        <li class="popular">อุโมงค์ต้นไม้</li>
-    </ul>
-    <p>Have you been in these places? go to click 
-        <a target="_blank" href="https://kku.ac.th/">Khon Kaen University</a>
-    </p>
+    <script>
+        while (true) {
+            let input_number = prompt("Enter positive integer");
+            let number = Number(input_number); 
+            if (checkInteger(number) == true) {
+                isPrimes(number);
+                showPrimes(number);
+                break;
+            }
+        }
+ 
+        function checkInteger(n) {
+            if (n % 1 == 0 && n >= 0) {
+                console.log("Positive Integer");
+                return true;
+            } else {
+                console.log("Not Positive Integer");
+            }
+        }
+        function showPrimes(n) {
+            let primes = [];
+            for (let i = 2; i < n; i++) {
+                if (!isPrimes(i)) continue;
+                const array_primes = primes.push(i);
+            }
+            alert("For n = " + n + " primes are \n" + primes);
+        }
+        function isPrimes(n) {
+            for (let i = 2; i < n; i++) {
+                if (n % i == 0) {
+                    console.log("Num is not Prime");
+                    return false;
+                }
+            }
+            console.log("Num is Prime");
+            return true;
+        } 
+    </script>
+    <h1 style="text-align: center;">Primes Number Finder!</h1>
+    <h2 style="text-align: center;">Congratulation</h2>
 </body>
-
 </html>
