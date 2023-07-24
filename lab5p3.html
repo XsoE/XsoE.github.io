@@ -1,0 +1,45 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 5 Problem 3</title>
+    <style>
+        div {
+            background-color: red;
+            height: 25%;
+            width: 25%;
+            float: left;
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        for (let i = 1; i <= 16; i++) {
+            let myDiv = document.createElement('div');
+            document.body.appendChild(myDiv);
+            console.log(i);
+        }
+        function random(number) {
+            return Math.floor(Math.random() * number);
+        }
+        function bgChange() {
+            let ranCol = 'rgb(' + random(255) + ',' + random(255) + ',' + random(255) + ')';
+            return ranCol;
+        }
+        let div = document.querySelectorAll('div');
+        for (let i = 0; i < div.length; i++) {
+            if (i % 2 == 0) {
+                div[i].onclick = function(e) {
+                    e.target.style.backgroundColor = bgChange();
+                }
+            } else {
+                div[i].onclick = function(e) {
+                    e.target.style.backgroundColor = 'yellow';
+                }
+            }
+        }
+    </script>
+    
+</body>
+</html>
